@@ -64,7 +64,10 @@ function fetchResults(url) {
         spinner.classList.toggle('spinner');
     }).catch(function(err) {
         console.log(err);
+        searchButton.disabled = false;
+        spinner.classList.toggle('spinner');
         alert(err);
+        document.querySelector('.content').innerHTML = '<p>' + err + '</p>';
     });
 }
 
@@ -131,7 +134,7 @@ errorText.style.display = 'none';
 var books=0, pages=0, currentPage=1, searchText='', url='';
 
 searchButton.addEventListener('click', function() {
-    if(keyword.value == '') {
+    if(keyword.value.length < 3) {
         errorText.style.display = 'block';
     } else {
         errorText.style.display = 'none';
