@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Library Genesis</title>
+	<!--<link rel="stylesheet" type="text/css" href="framework7.min.css">-->
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+	<div class="container">
+		<div class="heading">
+			<h1>Library Genesis</h1>
+			<div class="search-bar">
+				<input type="text" id="keyword" placeholder="Enter search text here...">
+				<div class="error">Please enter a search text first</div>
+				<button id="search">Search</button>
+			</div>
+			<div id="spinner"></div>
+		</div>
+		<div class="content"></div>
+	</div>
+	
+	
+	<script id="template" type="text/x-handlebars-template">
+		<div class="summary">
+			<p>Search results for <b>{{summary.keyword}}</b></p>
+			{{this.summary.books}} files found | Showing {{this.summary.start}} - {{this.summary.end}}
+		</div>
+		
+		{{#each results}}
+		<a href="{{this.link}}" title="">
+		<div class="result">
+			<div class="image"><img src="{{this.img}}" alt=""></div>
+			<div class="desc">
+				<h3>{{this.title}}</h3>
+				<h4><i>{{this.auth}}</i></h4>
+				<p>Publisher: {{this.pub}}</p>
+				<p>Edition: {{this.ed}}</p>
+				<p>Year: {{this.year}}, Pages: {{this.pages}}</p>
+				<p>{{this.ext}}, {{this.size}}</p>
+			</div>
+		</div>
+		</a>
+		{{/each}}
+
+		<div class="pagination">
+			<button id="previous">< Previous</button>
+			<div>
+				Page {{this.summary.current}} of {{this.summary.pages}}
+			</div>
+			<button id="next">Next ></button>
+		</div>
+	</script>
+
+	<script src="/handlebars.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/app.js" type="text/javascript" charset="utf-8" async defer></script>
+</body>
+</html>
