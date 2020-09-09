@@ -82,6 +82,8 @@ function parseHTML(html) {
             return resultObject(results[resultsArray.indexOf(item)].querySelectorAll('td'));
         });
         buildContent(results);
+    } else {
+    	document.querySelector('.content').innerHTML = 'No files found';
     }
 }
 
