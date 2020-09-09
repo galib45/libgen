@@ -40,12 +40,15 @@ function buildContent(results) {
 }
 
 function makeUrl(keyword) {
-    var url = new URL('https://thingproxy.freeboard.io/fetch/https://libgen.lc/search.php');
+    //https://thingproxy.freeboard.io/fetch/
+    //https://cors-proxy.htmldriven.com/?url=
+    var proxy = 'https://cors-anywhere.herokuapp.com/';
+    var url = new URL('https://libgen.lc/search.php');
     url.searchParams.set('req', keyword);
     url.searchParams.set('view', 'detailed');
     url.searchParams.set('sort', 'year');
     url.searchParams.set('sortmode', 'DESC');
-    return url.href;
+    return proxy+url.href;
 }
 
 function fetchResults(url) {
