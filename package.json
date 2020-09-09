@@ -1,0 +1,19 @@
+{
+  "name": "libgen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "homepage": "https://galib45.github.io/libgen"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "handlebars": "^4.7.6"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
+  }
+}
