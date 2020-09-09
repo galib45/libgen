@@ -103,6 +103,7 @@ button:disabled {
 .result > * {
 	margin: 5px 10px;
 	width: 50%;
+	font-size: 75%;
 }
 
 .result .desc > h3 {
